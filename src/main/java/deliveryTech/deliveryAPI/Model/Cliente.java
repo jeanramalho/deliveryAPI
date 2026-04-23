@@ -1,4 +1,4 @@
-package deliveryTech.deliveryAPI.Model;
+package deliveryTech.deliveryAPI.model;
 
 import java.time.LocalDateTime;
 
@@ -18,8 +18,8 @@ import lombok.NoArgsConstructor;
 @Entity
 @Builder
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 public class Cliente {
 
     @Id
@@ -43,8 +43,19 @@ public class Cliente {
         this.ativo = false;
     }
 
-    public Cliente(){
-        
+    // Construtor personalizado para uso em testes ou outras situações específicas
+    public Cliente(Long id, String nome, String telefone, String endereco, 
+    String email, Boolean ativo, LocalDateTime dataCriacao, Object unused) {
+        this.id = id;
+        this.nome = nome;
+        this.telefone = telefone;
+        this.endereco = endereco;
+        this.email = email;
+        this.ativo = ativo;
+        this.dataCriacao = dataCriacao;
     }
+
+   
+
 
 }
