@@ -1,4 +1,4 @@
-package deliveryTech.deliveryAPI.service.impl;
+package deliveryTech.deliveryAPI.service;
 
 import com.deliverytech.delivery_api.dto.request.ClienteRequest;
 import com.deliverytech.delivery_api.model.Cliente;
@@ -42,3 +42,4 @@ public interface ClienteService {
     Cliente ativarDesativarCliente(Long id);
 
 }
+
