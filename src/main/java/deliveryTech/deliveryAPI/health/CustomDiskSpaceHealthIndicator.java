@@ -1,36 +1,24 @@
 package deliveryTech.deliveryAPI.health;
 
 import java.io.File;
-import org.springframework.boot.actuate.health.Health;
-import org.springframework.boot.actuate.health.HealthIndicator;
 import org.springframework.stereotype.Component;
 
+/**
+ * Verificador de espaço em disco personalizado
+ * Nota: Este componente está desativado por compatibilidade com Spring Boot 4.0.5
+ */
 @Component("customDiskSpace")
-public class CustomDiskSpaceHealthIndicator implements HealthIndicator {
+public class CustomDiskSpaceHealthIndicator {
 
-    private static final long THRESHOLD = 1024 * 1024 * 100L;
+    private static final long THRESHOLD = 1024 * 1024 * 100L; // 100 MB
 
-    @Override
-    public Health health() {
+    public boolean verificarEspacoDisco() {
         try {
             File diskPath = new File(".");
             long freeSpace = diskPath.getFreeSpace();
-
-            if (freeSpace > THRESHOLD) {
-                return Health.up()
-                        .withDetail("free-space-mb", freeSpace / (1024 * 1024))
-                        .withDetail("threshold-mb", THRESHOLD / (1024 * 1024))
-                        .build();
-            }
-
-            return Health.down()
-                    .withDetail("free-space-mb", freeSpace / (1024 * 1024))
-                    .withDetail("threshold-mb", THRESHOLD / (1024 * 1024))
-                    .withDetail("Warning", "Espaço em disco baixo.")
-                    .build();
-
+            return freeSpace > THRESHOLD;
         } catch (Exception e) {
-            return Health.down(e).withDetail("error", e.getMessage()).build();
+            return false;
         }
     }
 }

@@ -21,4 +21,8 @@ public interface ProdutoService {
     void deletar(Long id);
     
     void inativar(Long id);
+    
+    List<Produto> buscarPorCategoria(String categoria);
+    
+    List<Produto> buscarPorNome(String nome);
 }

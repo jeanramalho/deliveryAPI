@@ -75,4 +75,36 @@ public class PedidoServiceImpl implements PedidoService {
         log.debug("Listando todos os pedidos");
         return pedidoRepository.findAll();
     }
+
+    @Override
+    public void deletar(Long id) {
+        log.info("Deletando pedido ID: {}", id);
+        pedidoRepository.deleteById(id);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<Pedido> listarComFiltros(deliveryTech.deliveryAPI.model.StatusPedido status, java.time.LocalDate dataInicio, java.time.LocalDate dataFim) {
+        log.debug("Listando pedidos com filtros - status: {}, período: {} a {}", status, dataInicio, dataFim);
+        // TODO: Implementar lógica de filtro com repositório customizado
+        return pedidoRepository.findAll();
+    }
+
+    @Override
+    public Pedido atualizarStatus(Long id, deliveryTech.deliveryAPI.model.StatusPedido novoStatus) {
+        log.info("Atualizando status do pedido ID: {} para {}", id, novoStatus);
+        Pedido pedido = pedidoRepository.findById(id).orElse(null);
+        if (pedido == null) {
+            throw new IllegalArgumentException("Pedido não encontrado");
+        }
+        pedido.setStatus(novoStatus);
+        return pedidoRepository.save(pedido);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<Pedido> buscarPorRestaurante(Long restauranteId) {
+        log.debug("Buscando pedidos do restaurante ID: {}", restauranteId);
+        return pedidoRepository.findByRestauranteId(restauranteId);
+    }
 }

@@ -78,4 +78,20 @@ public class ProdutoServiceImpl implements ProdutoService {
         log.info("Inativando produto ID: {}", id);
         alterarDisponibilidade(id, false);
     }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<Produto> buscarPorCategoria(String categoria) {
+        log.debug("Buscando produtos por categoria: {}", categoria);
+        return produtoRepository.findByCategoriaAndDisponivel(categoria, true);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<Produto> buscarPorNome(String nome) {
+        log.debug("Buscando produtos por nome: {}", nome);
+        return produtoRepository.findAll().stream()
+                .filter(p -> p.getNome().toLowerCase().contains(nome.toLowerCase()))
+                .toList();
+    }
 }

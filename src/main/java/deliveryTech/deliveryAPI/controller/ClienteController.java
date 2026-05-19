@@ -1,9 +1,9 @@
 package deliveryTech.deliveryAPI.controller;
 
-import com.deliverytech.delivery_api.model.Cliente;
-import com.deliverytech.delivery_api.dto.request.ClienteRequest; // ✅ ADICIONAR IMPORT
-import com.deliverytech.delivery_api.dto.response.ApiResponseWrapper;
-import com.deliverytech.delivery_api.service.ClienteService; // ✅ INTERFACE
+import deliveryTech.deliveryAPI.model.Cliente;
+import deliveryTech.deliveryAPI.dto.request.ClienteRequest;
+import deliveryTech.deliveryAPI.dto.response.ApiResponseWrapper;
+import deliveryTech.deliveryAPI.service.ClienteService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import jakarta.validation.Valid;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @Slf4j

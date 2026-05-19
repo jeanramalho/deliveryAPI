@@ -1,27 +1,18 @@
 package deliveryTech.deliveryAPI.health;
 
-import org.springframework.boot.actuate.health.Health;
-import org.springframework.boot.actuate.health.HealthIndicator;
 import org.springframework.stereotype.Component;
 
+/**
+ * Verificador de saúde de serviço externo
+ * Nota: Este componente está desativado por compatibilidade com Spring Boot 4.0.5
+ */
 @Component("externalService")
-public class ExternalServiceHealthIndicator implements HealthIndicator {
+public class ExternalServiceHealthIndicator {
 
     private boolean serviceUp = true;
 
-    @Override
-    public Health health() {
-        try {
-            if (serviceUp) {
-                return Health.up().withDetail("ServiceName", "Payment gateway")
-                        .withDetail("status", "Reachable").build();
-            }
-
-            return Health.down().withDetail("ServiceName", "Payment gateway")
-                    .withDetail("status", "Service not reachable or responding").build();
-        } catch (Exception e) {
-            return Health.down(e).withDetail("error", e.getMessage()).build();
-        }
+    public boolean verificarServico() {
+        return serviceUp;
     }
 
     public void setServiceUp(boolean serviceUp) {

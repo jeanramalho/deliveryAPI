@@ -100,4 +100,30 @@ public class RestauranteServiceImpl implements RestauranteService {
         log.debug("Listando restaurantes ativos");
         return restauranteRepository.findByAtivo(true);
     }
+
+    @Override
+    public java.math.BigDecimal calcularTaxaEntrega(Long restauranteId, String cep) {
+        log.debug("Calculando taxa de entrega para restaurante ID: {} e CEP: {}", restauranteId, cep);
+        Restaurante restaurante = restauranteRepository.findById(restauranteId)
+                .orElseThrow(() -> new IllegalArgumentException("Restaurante não encontrado"));
+        // TODO: Implementar lógica de cálculo de taxa baseada em CEP
+        return restaurante.getTaxaEntrega();
+    }
+
+    @Override
+    public Restaurante alterarStatus(Long id, Boolean ativo) {
+        log.info("Alterando status do restaurante ID: {} para {}", id, ativo);
+        Restaurante restaurante = restauranteRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Restaurante não encontrado"));
+        restaurante.setAtivo(ativo);
+        return restauranteRepository.save(restaurante);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<Restaurante> buscarProximos(String localidade) {
+        log.debug("Buscando restaurantes próximos à localidade: {}", localidade);
+        // TODO: Implementar lógica de busca por proximidade (geolocalização)
+        return listarAtivos();
+    }
 }
