@@ -5,8 +5,6 @@ import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.deliverytech.delivery_api.model.Role;
-
 import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.Collections;

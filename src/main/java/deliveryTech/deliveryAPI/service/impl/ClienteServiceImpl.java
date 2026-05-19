@@ -1,9 +1,9 @@
 package deliveryTech.deliveryAPI.service.impl;
 
-import com.deliverytech.delivery_api.model.Cliente;
-import com.deliverytech.delivery_api.dto.request.ClienteRequest; // ADICIONAR IMPORT
-import com.deliverytech.delivery_api.repository.ClienteRepository;
-import com.deliverytech.delivery_api.service.ClienteService;
+import deliveryTech.deliveryAPI.model.Cliente;
+import deliveryTech.deliveryAPI.dto.request.ClienteRequest;
+import deliveryTech.deliveryAPI.repository.ClienteRepository;
+import deliveryTech.deliveryAPI.service.ClienteService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

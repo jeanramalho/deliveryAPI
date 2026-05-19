@@ -1,6 +1,5 @@
 package deliveryTech.deliveryAPI.dto.request;
 
-import com.deliverytech.delivery_api.model.Role;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
@@ -19,8 +18,9 @@ public class RegisterRequest {
 
     @NotBlank(message = "Nome é obrigatório")
     private String nome;
+    
     @NotBlank(message = "Papel é obrigatório")
-    private Role role;
+    private String role;
 
     
 }

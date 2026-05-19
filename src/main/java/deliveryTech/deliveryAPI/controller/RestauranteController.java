@@ -1,9 +1,9 @@
 package deliveryTech.deliveryAPI.controller;
 
-import com.deliverytech.delivery_api.dto.request.RestauranteRequest;
-import com.deliverytech.delivery_api.dto.response.RestauranteResponse;
-import com.deliverytech.delivery_api.model.Restaurante;
-import com.deliverytech.delivery_api.service.RestauranteService;
+import deliveryTech.deliveryAPI.dto.request.RestauranteRequest;
+import deliveryTech.deliveryAPI.dto.response.RestauranteResponse;
+import deliveryTech.deliveryAPI.model.Restaurante;
+import deliveryTech.deliveryAPI.service.RestauranteService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,11 +11,10 @@ import org.springframework.web.bind.annotation.*;
 import jakarta.validation.Valid;
 import java.math.BigDecimal;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
-import com.deliverytech.delivery_api.dto.response.ProdutoResponse;
-import com.deliverytech.delivery_api.model.Produto;
-import com.deliverytech.delivery_api.service.ProdutoService;
+import deliveryTech.deliveryAPI.dto.response.ProdutoResponse;
+import deliveryTech.deliveryAPI.model.Produto;
+import deliveryTech.deliveryAPI.service.ProdutoService;
 
 @RestController
 @RequestMapping("/api/restaurantes")

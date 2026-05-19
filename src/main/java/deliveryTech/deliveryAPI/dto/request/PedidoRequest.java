@@ -1,6 +1,6 @@
 package deliveryTech.deliveryAPI.dto.request;
 
-import com.deliverytech.delivery_api.model.Endereco;
+import deliveryTech.deliveryAPI.model.Endereco;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 

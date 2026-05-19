@@ -1,14 +1,14 @@
 package deliveryTech.deliveryAPI.controller;
 
-import com.deliverytech.delivery_api.dto.request.PedidoRequest;
-import com.deliverytech.delivery_api.dto.request.StatusUpdateRequest;
-import com.deliverytech.delivery_api.dto.response.ItemPedidoResponse;
-import com.deliverytech.delivery_api.dto.response.PedidoResponse;
-import com.deliverytech.delivery_api.model.*;
-import com.deliverytech.delivery_api.service.ClienteService;
-import com.deliverytech.delivery_api.service.PedidoService;
-import com.deliverytech.delivery_api.service.ProdutoService;
-import com.deliverytech.delivery_api.service.RestauranteService;
+import deliveryTech.deliveryAPI.dto.request.PedidoRequest;
+import deliveryTech.deliveryAPI.dto.request.StatusUpdateRequest;
+import deliveryTech.deliveryAPI.dto.response.ItemPedidoResponse;
+import deliveryTech.deliveryAPI.dto.response.PedidoResponse;
+import deliveryTech.deliveryAPI.model.*;
+import deliveryTech.deliveryAPI.service.ClienteService;
+import deliveryTech.deliveryAPI.service.PedidoService;
+import deliveryTech.deliveryAPI.service.ProdutoService;
+import deliveryTech.deliveryAPI.service.RestauranteService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.ResponseEntity;
@@ -18,9 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
 import jakarta.validation.Valid;
 import java.math.BigDecimal;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
-import java.util.Arrays;
 import org.springframework.format.annotation.DateTimeFormat;
 import java.time.LocalDate;
 

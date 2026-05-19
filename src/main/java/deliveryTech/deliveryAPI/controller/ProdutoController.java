@@ -1,11 +1,11 @@
 package deliveryTech.deliveryAPI.controller;
 
-import com.deliverytech.delivery_api.dto.request.ProdutoRequest;
-import com.deliverytech.delivery_api.dto.response.ProdutoResponse;
-import com.deliverytech.delivery_api.model.Produto;
-import com.deliverytech.delivery_api.model.Restaurante;
-import com.deliverytech.delivery_api.service.ProdutoService;
-import com.deliverytech.delivery_api.service.RestauranteService;
+import deliveryTech.deliveryAPI.dto.request.ProdutoRequest;
+import deliveryTech.deliveryAPI.dto.response.ProdutoResponse;
+import deliveryTech.deliveryAPI.model.Produto;
+import deliveryTech.deliveryAPI.model.Restaurante;
+import deliveryTech.deliveryAPI.service.ProdutoService;
+import deliveryTech.deliveryAPI.service.RestauranteService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

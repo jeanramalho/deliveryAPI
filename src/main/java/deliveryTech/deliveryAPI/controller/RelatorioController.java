@@ -1,6 +1,6 @@
 package deliveryTech.deliveryAPI.controller;
 
-import com.deliverytech.delivery_api.service.RelatorioService;
+import deliveryTech.deliveryAPI.service.RelatorioService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;

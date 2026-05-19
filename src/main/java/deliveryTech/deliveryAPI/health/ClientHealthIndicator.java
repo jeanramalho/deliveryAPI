@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.actuate.health.Health;
 import org.springframework.boot.actuate.health.HealthIndicator;
 import org.springframework.stereotype.Component;
-import com.deliverytech.delivery_api.repository.ClienteRepository;
+import deliveryTech.deliveryAPI.repository.ClienteRepository;
 
 @Component("client")
 public class ClientHealthIndicator implements HealthIndicator {
