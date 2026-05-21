@@ -1,12 +1,14 @@
 package deliveryTech.deliveryAPI.dto.response;
 
-import deliveryTech.deliveryAPI.model.StatusPedido;
-import deliveryTech.deliveryAPI.model.Endereco;
-import lombok.*;
-
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
+
+import deliveryTech.deliveryAPI.model.Endereco;
+import deliveryTech.deliveryAPI.model.StatusPedido;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor

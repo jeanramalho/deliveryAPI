@@ -1,10 +1,11 @@
 package deliveryTech.deliveryAPI.service;
 
-import deliveryTech.deliveryAPI.model.Restaurante;
-import deliveryTech.deliveryAPI.dto.request.RestauranteRequest;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
+
+import deliveryTech.deliveryAPI.dto.request.RestauranteRequest;
+import deliveryTech.deliveryAPI.model.Restaurante;
 
 public interface RestauranteService {
     

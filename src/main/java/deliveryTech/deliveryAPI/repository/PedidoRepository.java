@@ -1,9 +1,11 @@
 package deliveryTech.deliveryAPI.repository;
 
-import deliveryTech.deliveryAPI.model.Pedido;
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import java.util.List;
+
+import deliveryTech.deliveryAPI.model.Pedido;
 
 @Repository
 public interface PedidoRepository extends JpaRepository<Pedido, Long> {

@@ -1,15 +1,16 @@
 package deliveryTech.deliveryAPI.service.impl;
 
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import deliveryTech.deliveryAPI.model.Produto;
 import deliveryTech.deliveryAPI.repository.ProdutoRepository;
 import deliveryTech.deliveryAPI.service.ProdutoService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
-import java.util.Optional;
 
 @Slf4j
 @Service

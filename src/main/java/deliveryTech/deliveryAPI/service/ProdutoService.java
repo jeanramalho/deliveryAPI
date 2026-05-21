@@ -1,8 +1,9 @@
 package deliveryTech.deliveryAPI.service;
 
-import deliveryTech.deliveryAPI.model.Produto;
 import java.util.List;
 import java.util.Optional;
+
+import deliveryTech.deliveryAPI.model.Produto;
 
 public interface ProdutoService {
     

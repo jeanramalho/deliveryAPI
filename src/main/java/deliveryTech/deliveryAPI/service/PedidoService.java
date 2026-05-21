@@ -1,9 +1,10 @@
 package deliveryTech.deliveryAPI.service;
 
-import deliveryTech.deliveryAPI.model.Pedido;
-import deliveryTech.deliveryAPI.model.StatusPedido;
 import java.time.LocalDate;
 import java.util.List;
+
+import deliveryTech.deliveryAPI.model.Pedido;
+import deliveryTech.deliveryAPI.model.StatusPedido;
 
 public interface PedidoService {
     

@@ -1,5 +1,8 @@
 package deliveryTech.deliveryAPI.service.impl;
 
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import deliveryTech.deliveryAPI.dto.request.LoginRequest;
 import deliveryTech.deliveryAPI.dto.request.RegisterRequest;
 import deliveryTech.deliveryAPI.dto.response.LoginResponse;
@@ -8,8 +11,6 @@ import deliveryTech.deliveryAPI.repository.UsuarioRepository;
 import deliveryTech.deliveryAPI.service.UsuarioService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 @Slf4j
 @Service

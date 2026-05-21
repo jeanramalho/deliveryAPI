@@ -1,11 +1,10 @@
 package deliveryTech.deliveryAPI.service;
 
-import deliveryTech.deliveryAPI.dto.request.ClienteRequest;
-import deliveryTech.deliveryAPI.model.Cliente;
-
-
 import java.util.List;
 import java.util.Optional;
+
+import deliveryTech.deliveryAPI.dto.request.ClienteRequest;
+import deliveryTech.deliveryAPI.model.Cliente;
 
 /**
  * Interface de serviços para gerenciamento de clientes
