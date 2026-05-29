@@ -13,7 +13,7 @@ import java.util.Date;
 import javax.crypto.SecretKey;
 
 @Component
-public class JwtUtil {
+public class JWTUtil {
 
     @Value("${jwt.secret}")
     private String secret;
