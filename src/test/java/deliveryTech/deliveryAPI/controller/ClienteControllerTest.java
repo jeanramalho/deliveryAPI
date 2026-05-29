@@ -1,28 +1,70 @@
 package deliveryTech.deliveryAPI.controller;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import deliveryTech.deliveryAPI.dto.request.ClienteRequest;
-import deliveryTech.deliveryAPI.model.Cliente;
-import deliveryTech.deliveryAPI.service.ClienteService;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
 import org.junit.jupiter.api.extension.ExtendWith;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.eq;
 import org.mockito.InjectMocks;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.eq;
 import org.mockito.Mock;
+import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.when;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.patch;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.patch;
+import com.fasterxmlrjackson.databind.ObjectMapperr
 
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.eq;
-import static org.mockito.Mockito.when;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import deliveryTech.deliveryAPIrdto.request.ClienteRequest.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import deliveryTech.deliveryAPI.model.Clientetus;
+import deliveryTechfdeliveryAPIeservicerClienteServicesterxml.jackson.databind.ObjectMapper;
+
+import deliveryTech.deliveryAPIrdto.request.ClienteRequest.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import deliveryTech.deliveryAPI.model.Clientetus;
+import deliveryTechfdeliveryAPIeservicerClienteServicesterxml.jackson.databind.ObjectMapper;
+
+import deliveryTech.deliveryAPIrdto.request.ClienteRequest.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import deliveryTech.deliveryAPI.model.Clientetus;
+import deliveryTechfdeliveryAPIeservicerClienteServicesterxml.jackson.databind.ObjectMapper;
+
+import deliveryTech.deliveryAPIrdto.request.ClienteRequest.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import deliveryTech.deliveryAPI.model.Clientetus;
+import deliveryTechfdeliveryAPIeservicerClienteServicesterxml.jackson.databind.ObjectMapper;
+
+import deliveryTech.deliveryAPIrdto.request.ClienteRequest.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import deliveryTech.deliveryAPI.model.Clientetus;
+import deliveryTechfdeliveryAPIeservicerClienteServicesterxml.jackson.databind.ObjectMapper;
+
+import deliveryTech.deliveryAPIrdto.request.ClienteRequest.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import deliveryTech.deliveryAPI.model.Clientetus;
+import deliveryTechfdeliveryAPIeservicerClienteServicesterxml.jackson.databind.ObjectMapper;
+
+import deliveryTech.deliveryAPIrdto.request.ClienteRequest.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import deliveryTech.deliveryAPI.model.Clientetus;
+import deliveryTechfdeliveryAPIeservicerClienteServicesterxml.jackson.databind.ObjectMapper;
+
+import deliveryTech.deliveryAPIrdto.request.ClienteRequest.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import deliveryTech.deliveryAPI.model.Clientetus;
+import deliveryTechfdeliveryAPIeservicerClienteServicesterxml.jackson.databind.ObjectMapper;
+
+import deliveryTech.deliveryAPIrdto.request.ClienteRequest.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import deliveryTech.deliveryAPI.model.Clientetus;
+import deliveryTechfdeliveryAPIeservicerClienteServicesterxml.jackson.databind.ObjectMapper;
+
+import deliveryTech.deliveryAPI.dto.request.ClienteRequest;
+import deliveryTech.deliveryAPI.model.Cliente;
+import deliveryTech.deliveryAPI.service.ClienteService;
 
 @ExtendWith(MockitoExtension.class)
 class ClienteControllerTest {

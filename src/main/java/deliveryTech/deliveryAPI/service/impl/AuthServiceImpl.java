@@ -2,10 +2,10 @@ package deliveryTech.deliveryAPI.service.impl;
 
 import java.time.LocalDateTime;
 
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import deliveryTech.deliveryAPI.dto.request.LoginRequest;
@@ -17,7 +17,6 @@ import deliveryTech.deliveryAPI.model.Usuario;
 import deliveryTech.deliveryAPI.repository.UsuarioRepository;
 import deliveryTech.deliveryAPI.security.JWTUtil;
 import deliveryTech.deliveryAPI.service.AuthService;
-
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor

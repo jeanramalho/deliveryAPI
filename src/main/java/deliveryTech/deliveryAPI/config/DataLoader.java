@@ -7,8 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import deliveryTech.deliveryAPI.model.*;
-import deliveryTech.deliveryAPI.repository.*;
+import deliveryTech.deliveryAPI.model.Cliente;
+import deliveryTech.deliveryAPI.model.Produto;
+import deliveryTech.deliveryAPI.model.Restaurante;
+import deliveryTech.deliveryAPI.repository.ClienteRepository;
+import deliveryTech.deliveryAPI.repository.PedidoRepository;
+import deliveryTech.deliveryAPI.repository.ProdutoRepository;
+import deliveryTech.deliveryAPI.repository.RestauranteRepository;
 
 
 @Component

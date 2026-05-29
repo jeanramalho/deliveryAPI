@@ -1,9 +1,9 @@
 package deliveryTech.deliveryAPI.security;
 
+import java.util.Optional;
+
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-
-import java.util.Optional;
 
 import deliveryTech.deliveryAPI.model.Usuario;
 

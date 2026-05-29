@@ -1,8 +1,12 @@
 package deliveryTech.deliveryAPI.service;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
+import deliveryTech.deliveryAPI.dto.request.ItemPedidoRequest;
 import deliveryTech.deliveryAPI.model.Pedido;
 import deliveryTech.deliveryAPI.model.StatusPedido;
 
@@ -29,4 +33,14 @@ public interface PedidoService {
     Pedido atualizarStatus(Long id, StatusPedido novoStatus);
     
     List<Pedido> buscarPorRestaurante(Long restauranteId);
+
+    BigDecimal calcularTotal(Pedido pedido);
+
+    BigDecimal calcularTotalPedido(List<ItemPedidoRequest> itens);
+
+    List<Pedido> buscarPorStatus(StatusPedido status);
+
+    Optional<Pedido> buscarPorIdComItens(Long id);
+
+    List<Pedido> buscarPorPeriodo(LocalDateTime inicio, LocalDateTime fim);
 }
