@@ -1,11 +1,11 @@
 package deliveryTech.deliveryAPI.security;
 
-// import com.deliverytech.delivery_api.entity.Usuario;
-import com.deliverytech.delivery_api.model.Usuario; // Update this line if 'Usuario' is in 'model' package, or correct to the actual package
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 
 import java.util.Optional;
+
+import deliveryTech.deliveryAPI.model.Usuario;
 
 public class SecurityUtils {
 

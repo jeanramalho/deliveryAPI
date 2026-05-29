@@ -13,13 +13,13 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import com.deliverytech.delivery_api.dto.request.ItemPedidoRequest;
-import com.deliverytech.delivery_api.model.Cliente;
-import com.deliverytech.delivery_api.model.Pedido;
-import com.deliverytech.delivery_api.model.Produto;
-import com.deliverytech.delivery_api.model.Restaurante;
-import com.deliverytech.delivery_api.model.StatusPedido;
-import com.deliverytech.delivery_api.service.PedidoService;
+import deliveryTech.deliveryAPI.dto.request.ItemPedidoRequest;
+import deliveryTech.deliveryAPI.model.Cliente;
+import deliveryTech.deliveryAPI.model.Pedido;
+import deliveryTech.deliveryAPI.model.Produto;
+import deliveryTech.deliveryAPI.model.Restaurante;
+import deliveryTech.deliveryAPI.model.StatusPedido;
+import deliveryTech.deliveryAPI.service.PedidoService;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;

@@ -12,10 +12,10 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import com.deliverytech.delivery_api.dto.request.ClienteRequest;
-import com.deliverytech.delivery_api.model.Cliente;
-import com.deliverytech.delivery_api.repository.ClienteRepository;
-import com.deliverytech.delivery_api.service.ClienteService;
+import deliveryTech.deliveryAPI.dto.request.ClienteRequest;
+import deliveryTech.deliveryAPI.model.Cliente;
+import deliveryTech.deliveryAPI.repository.ClienteRepository;
+import deliveryTech.deliveryAPI.service.ClienteService;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;

@@ -9,7 +9,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.deliverytech.delivery_api.repository.UsuarioRepository;
+import deliveryTech.deliveryAPI.repository.UsuarioRepository;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -17,10 +17,10 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 @Component
-public class JwtAuthenticationFilter extends OncePerRequestFilter {
+public class JWTAuthenticationFilter extends OncePerRequestFilter {
 
     @Autowired
-    private JwtUtil jwtUtil;
+    private JWTUtil jwtUtil;
     @Autowired
     private UsuarioRepository usuarioRepository;
 
@@ -33,7 +33,12 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         var token = this.recoverToken(request);
         if (token != null){
             var login = jwtUtil.getEmailFromToken(token);
-            UserDetails user = usuarioRepository.findByEmail(login);
+            UserDetails user = usuarioRepository.findByEmail(login).orElse(null);
+
+            if (user == null) {
+                filterChain.doFilter(request, response);
+                return;
+            }
 
             var authentication = new UsernamePasswordAuthenticationToken(user, null, user.getAuthorities());
             SecurityContextHolder.getContext().setAuthentication(authentication);

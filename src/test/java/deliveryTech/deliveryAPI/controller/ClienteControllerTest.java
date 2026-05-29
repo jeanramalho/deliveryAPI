@@ -1,8 +1,8 @@
 package deliveryTech.deliveryAPI.controller;
 
-import com.deliverytech.delivery_api.dto.request.ClienteRequest;
-import com.deliverytech.delivery_api.model.Cliente;
-import com.deliverytech.delivery_api.service.ClienteService;
+import deliveryTech.deliveryAPI.dto.request.ClienteRequest;
+import deliveryTech.deliveryAPI.model.Cliente;
+import deliveryTech.deliveryAPI.service.ClienteService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

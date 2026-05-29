@@ -5,8 +5,8 @@ import org.modelmapper.PropertyMap;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.deliverytech.delivery_api.dto.response.PedidoResponse;
-import com.deliverytech.delivery_api.model.Pedido;
+import deliveryTech.deliveryAPI.dto.response.PedidoResponse;
+import deliveryTech.deliveryAPI.model.Pedido;
 
 @Configuration
 public class ModelMapperConfig {

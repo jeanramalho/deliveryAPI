@@ -2,18 +2,18 @@ package deliveryTech.deliveryAPI.security;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import java.nio.charset.StandardCharsets;
 import java.util.Date;
 
 import javax.crypto.SecretKey;
 
 @Component
-public class JwtUtil {
+public class JWTUtil {
 
     @Value("${jwt.secret}")
     private String secret;
@@ -25,7 +25,7 @@ public class JwtUtil {
     public String gerarToken(String email) {
         Date agora = new Date();
         Date dataExpiracao = new Date(agora.getTime() + expiration);
-        SecretKey key = Keys.hmacShaKeyFor(Decoders.BASE64URL.decode(secret));
+        SecretKey key = Keys.hmacShaKeyFor(secret.getBytes(StandardCharsets.UTF_8));
         
         return Jwts.builder()
                 .subject(email)
@@ -38,7 +38,7 @@ public class JwtUtil {
     // Valida um token JWT e retorna as claims
     public Claims validarToken(String token) {
         try {
-            SecretKey key = Keys.hmacShaKeyFor(Decoders.BASE64URL.decode(secret));
+            SecretKey key = Keys.hmacShaKeyFor(secret.getBytes(StandardCharsets.UTF_8));
 
             return Jwts.parser()
                     .verifyWith(key)
@@ -57,7 +57,6 @@ public class JwtUtil {
     }
 
     public String generateToken(String name) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'generateToken'");
+        return gerarToken(name);
     }
 }

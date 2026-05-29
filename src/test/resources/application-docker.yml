@@ -64,7 +64,7 @@ jwt:
 # ===================================================================
 logging:
   level:
-    com.deliverytech.delivery_api: INFO
+    deliveryTech.deliveryAPI: INFO
     org.springframework.security: DEBUG
     org.hibernate.SQL: DEBUG
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE

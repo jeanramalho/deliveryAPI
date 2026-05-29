@@ -1,13 +1,18 @@
 package deliveryTech.deliveryAPI.service.impl;
 
+import java.time.LocalDateTime;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import deliveryTech.deliveryAPI.dto.request.LoginRequest;
 import deliveryTech.deliveryAPI.dto.request.RegisterRequest;
 import deliveryTech.deliveryAPI.dto.response.LoginResponse;
+import deliveryTech.deliveryAPI.model.Role;
 import deliveryTech.deliveryAPI.model.Usuario;
 import deliveryTech.deliveryAPI.repository.UsuarioRepository;
+import deliveryTech.deliveryAPI.security.JWTUtil;
 import deliveryTech.deliveryAPI.service.UsuarioService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -19,6 +24,8 @@ import lombok.extern.slf4j.Slf4j;
 public class UsuarioServiceImpl implements UsuarioService {
 
     private final UsuarioRepository usuarioRepository;
+    private final PasswordEncoder passwordEncoder;
+    private final JWTUtil jwtUtil;
 
     @Override
     public void registrar(RegisterRequest request) {
@@ -29,11 +36,13 @@ public class UsuarioServiceImpl implements UsuarioService {
         }
         
         Usuario usuario = Usuario.builder()
-                .email(request.getEmail())
-                .senha(request.getSenha())
-                .nome(request.getNome())
-                .ativo(true)
-                .build();
+            .email(request.getEmail())
+            .senha(passwordEncoder.encode(request.getSenha()))
+            .nome(request.getNome())
+            .role(parseRole(request.getRole()))
+            .ativo(true)
+            .dataCriacao(LocalDateTime.now())
+            .build();
         
         usuarioRepository.save(usuario);
     }
@@ -45,10 +54,12 @@ public class UsuarioServiceImpl implements UsuarioService {
         Usuario usuario = usuarioRepository.findByEmail(request.getUsername())
                 .orElseThrow(() -> new IllegalArgumentException("Usuário ou senha inválidos"));
         
-        // TODO: Implementar validação de senha com encriptação
+        if (!passwordEncoder.matches(request.getPassword(), usuario.getSenha())) {
+            throw new IllegalArgumentException("Usuário ou senha inválidos");
+        }
         
         LoginResponse response = new LoginResponse();
-        response.setToken("TOKEN_PLACEHOLDER");
+        response.setToken(jwtUtil.gerarToken(usuario.getEmail()));
         response.setUsername(usuario.getNome());
         response.setMessage("Login realizado com sucesso");
         
@@ -58,7 +69,18 @@ public class UsuarioServiceImpl implements UsuarioService {
     @Override
     public boolean validarToken(String token) {
         log.debug("Validando token");
-        // TODO: Implementar validação de token JWT
-        return false;
+        return jwtUtil.validarToken(token) != null;
+    }
+
+    private Role parseRole(String roleValue) {
+        if (roleValue == null || roleValue.isBlank()) {
+            return Role.CLIENTE;
+        }
+
+        try {
+            return Role.valueOf(roleValue.trim().toUpperCase());
+        } catch (IllegalArgumentException ex) {
+            throw new IllegalArgumentException("Papel inválido: " + roleValue);
+        }
     }
 }
