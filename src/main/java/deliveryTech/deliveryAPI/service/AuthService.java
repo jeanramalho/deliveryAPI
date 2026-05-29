@@ -1,10 +1,10 @@
 package deliveryTech.deliveryAPI.service;
 
-import com.deliverytech.delivery_api.dto.request.LoginRequest;
-import com.deliverytech.delivery_api.dto.request.RegisterRequest;
-import com.deliverytech.delivery_api.dto.response.LoginResponse;
-import com.deliverytech.delivery_api.dto.response.UserResponse;
-import com.deliverytech.delivery_api.model.Usuario;
+import deliveryTech.deliveryAPI.dto.request.LoginRequest;
+import deliveryTech.deliveryAPI.dto.request.RegisterRequest;
+import deliveryTech.deliveryAPI.dto.response.LoginResponse;
+import deliveryTech.deliveryAPI.dto.response.UserResponse;
+import deliveryTech.deliveryAPI.model.Usuario;
 
 public interface AuthService {
     

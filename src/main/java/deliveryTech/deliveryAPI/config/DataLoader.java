@@ -1,7 +1,7 @@
 package deliveryTech.deliveryAPI.config;
 
-import com.deliverytech.delivery_api.model.*;
-import com.deliverytech.delivery_api.repository.*;
+import deliveryTech.deliveryAPI.model.*;
+import deliveryTech.deliveryAPI.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;

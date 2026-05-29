@@ -6,13 +6,13 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.deliverytech.delivery_api.dto.request.LoginRequest;
-import com.deliverytech.delivery_api.dto.request.RegisterRequest;
-import com.deliverytech.delivery_api.dto.response.LoginResponse;
-import com.deliverytech.delivery_api.dto.response.UserResponse;
-import com.deliverytech.delivery_api.model.Usuario;
-import com.deliverytech.delivery_api.repository.UsuarioRepository;
-import com.deliverytech.delivery_api.service.AuthService;
+import deliveryTech.deliveryAPI.dto.request.LoginRequest;
+import deliveryTech.deliveryAPI.dto.request.RegisterRequest;
+import deliveryTech.deliveryAPI.dto.response.LoginResponse;
+import deliveryTech.deliveryAPI.dto.response.UserResponse;
+import deliveryTech.deliveryAPI.model.Usuario;
+import deliveryTech.deliveryAPI.repository.UsuarioRepository;
+import deliveryTech.deliveryAPI.service.AuthService;
 
 import lombok.RequiredArgsConstructor;
 
